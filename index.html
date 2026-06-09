@@ -1,125 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeongTag Kim | Personal Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-            --primary-color: #1e3d59;
-            --accent-color: #17b890;
-            --card-bg: #ffffff;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 0.5rem 0 0; opacity: 0.9; }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            background: var(--card-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        .profile-area {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-        }
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        .btn:hover { opacity: 0.9; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; }
-        @media (max-width: 600px) {
-            .profile-area { flex-direction: column; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>SeongTag Kim</h1>
-        <p>Seoul National University | Business Administration & Artificial Intelligence</p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Personal website for SeongTag Kim, an SNU undergraduate studying Business Administration and Artificial Intelligence."
+    >
+    <title>SeongTag Kim | Business Administration & AI</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-name" href="#top" aria-label="SeongTag Kim home">
+        <span class="brand-mark" aria-hidden="true">SK</span>
+        <span>SeongTag Kim</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#resume">CV</a>
+      </nav>
+      <a class="nav-cta" href="assets/cv.pdf">Resume</a>
     </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="profile-area">
-                <img src="assets/profile.jpg" alt="SeongTag Kim" class="profile-img" onerror="this.src='assets/profile.png'; this.onerror=null;">
-                <div>
-                    <p>Hi, I'm <strong>SeongTag Kim</strong>. I am currently a 3rd-year undergraduate student at <strong>Seoul National University</strong>, double majoring in <strong>Business Administration</strong> and <strong>Artificial Intelligence</strong>. I graduated from Sejong Academy of Science and Arts (SASA).</p>
-                    <p>I am passionate about bridging the gap between sophisticated financial analysis and cutting-edge AI technologies.</p>
-                </div>
-            </div>
-        </section>
+    <main id="top">
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <p class="eyebrow">SNU undergraduate / Business Administration / AI</p>
+          <h1 id="intro-title">Business, AI, and finance, curated.</h1>
+          <p class="intro">
+            I am SeongTag Kim, a 3rd-year undergraduate at Seoul National
+            University double majoring in Business Administration and Artificial
+            Intelligence. My path connects financial discipline, analytical
+            problem-solving, and campus leadership.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button secondary" href="#profile-board">Explore profile</a>
+            <a class="button tertiary" href="#experience">View experience</a>
+          </div>
+        </div>
 
-        <section id="education">
-            <h2>Education & Certifications</h2>
-            <ul>
-                <li><strong>Seoul National University:</strong> CBA & B.S. in Artificial Intelligence (Double Major)</li>
-                <li><strong>Sejong Academy of Science and Arts (SASA)</strong></li>
-                <li><strong>CFA Program:</strong> Level 3 Candidate (Passed CFA Level 1 and Level 2)</li>
-            </ul>
-        </section>
+        <div id="profile-board" class="profile-board" aria-label="Profile highlights">
+          <article class="pin-card photo-pin pin-large">
+            <img
+              class="profile-image"
+              src="assets/profile.jpg"
+              alt="Portrait of SeongTag Kim"
+              onerror="if (!this.dataset.triedPng) { this.dataset.triedPng = 'true'; this.src = 'assets/profile.png'; } else { this.hidden = true; this.nextElementSibling.hidden = false; }"
+            >
+            <span class="profile-placeholder" hidden aria-hidden="true">SK</span>
+            <span class="pin-pill">SeongTag Kim</span>
+          </article>
 
-        <section id="experience">
-            <h2>Experience & Leadership</h2>
-            <ul>
-                <li><strong>SNU Student Ambassador (SSA):</strong> Acted as official university ambassador (2023)</li>
-                <li><strong>Student Council:</strong> Served at the College of Business Administration student council for 2 years (2022-2023)</li>
-                <li><strong>Military Service:</strong> Fulfllled mandatory service (2024-2025)</li>
-            </ul>
-        </section>
+          <article class="pin-card fact-pin">
+            <p class="pin-label">Current</p>
+            <h2>Seoul National University</h2>
+            <p>3rd-year undergraduate student.</p>
+          </article>
 
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>Click the button below to view or download my complete professional background.</p>
-            <a href="assets/cv.pdf" class="btn" target="_blank">Download CV (PDF)</a>
-        </section>
-    </div>
+          <article class="pin-card fact-pin soft">
+            <p class="pin-label">Majors</p>
+            <h2>Business Administration + AI</h2>
+            <p>Strategy, finance, data, and intelligent systems.</p>
+          </article>
 
-</body>
+          <article class="pin-card fact-pin dark">
+            <p class="pin-label">Finance</p>
+            <h2>CFA Level 3 Candidate</h2>
+            <p>Passed CFA Level 1 and Level 2.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section intro-section" aria-labelledby="about-title">
+        <p class="section-label">About</p>
+        <h2 id="about-title">A compact profile across academics, finance, and service.</h2>
+        <p>
+          This site gathers the main pieces of my background in a simple visual
+          board: SNU coursework in business and AI, a SASA foundation, CFA
+          progress, student leadership, and completed military service.
+        </p>
+      </section>
+
+      <section id="education" class="section" aria-labelledby="education-title">
+        <div class="section-heading">
+          <p class="section-label">Education</p>
+          <h2 id="education-title">Academic pins</h2>
+        </div>
+        <div class="pin-masonry">
+          <article class="pin-card text-pin tall">
+            <p class="pin-label">SNU</p>
+            <h3>Seoul National University</h3>
+            <p>
+              3rd-year undergraduate student double majoring in Business
+              Administration and Artificial Intelligence.
+            </p>
+          </article>
+          <article class="pin-card text-pin">
+            <p class="pin-label">SASA</p>
+            <h3>Sejong Academy of Science and Arts</h3>
+            <p>
+              Graduate of SASA, with a strong foundation in rigorous analytical
+              and creative problem-solving.
+            </p>
+          </article>
+          <article class="pin-card text-pin accent">
+            <p class="pin-label">Focus</p>
+            <h3>Business x AI</h3>
+            <p>
+              Interested in practical ways that data, finance, and intelligent
+              systems can inform better decisions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="section-label">Leadership & experience</p>
+          <h2 id="experience-title">Leadership, council work, and national service.</h2>
+        </div>
+        <div class="pin-masonry">
+          <article class="pin-card text-pin dark tall">
+            <p class="pin-label">2024 - 2025</p>
+            <h3>Mandatory Military Service</h3>
+            <p>
+              Completed mandatory military service, strengthening discipline,
+              reliability, and team-oriented execution.
+            </p>
+          </article>
+          <article class="pin-card text-pin">
+            <p class="pin-label">2023</p>
+            <h3>SNU Student Ambassador</h3>
+            <p>
+              Served as an SNU Student Ambassador, representing the university
+              and supporting visitors, prospective students, and campus programs.
+            </p>
+          </article>
+          <article class="pin-card text-pin soft">
+            <p class="pin-label">2022 - 2023</p>
+            <h3>College of Business Administration Student Council</h3>
+            <p>
+              Active student council member for two years, contributing to
+              student initiatives and college community operations.
+            </p>
+          </article>
+          <article class="pin-card text-pin">
+            <p class="pin-label">Certification</p>
+            <h3>CFA Level 3 Candidate</h3>
+            <p>
+              Successfully passed CFA Level 1 and Level 2; currently pursuing
+              CFA Level 3.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="resume" class="section resume-section" aria-labelledby="resume-title">
+        <div>
+          <p class="section-label">CV / Resume</p>
+          <h2 id="resume-title">Full profile and background</h2>
+          <p>
+            View or download my CV for more detail on education, leadership,
+            service, and qualifications.
+          </p>
+        </div>
+        <div class="resume-actions">
+          <a class="button primary" href="assets/cv.pdf">View CV</a>
+          <a class="button secondary" href="assets/cv.pdf" download>Download CV</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 SeongTag Kim. Static site for GitHub Pages.</p>
+    </footer>
+  </body>
 </html>
